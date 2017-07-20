@@ -1,0 +1,67 @@
+body {
+	-webkit-overflow-scrolling: touch;
+}
+
+.wangEditor-mobile-txt {
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	position: relative;
+
+	outline: none;
+
+	* {
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+
+		line-height: 1.5;
+	}
+
+	.focus-elem {
+		background-color: #f1f1f1;
+	}
+
+	
+	//	注释: 一个 list 被 focus 之后，会因为增加了 .focus-elem 而有一个背景色
+	//	     此时执行取消 list 时，取消之后的文字也会带着这个背景色（这是不正确的）
+	//	     因此，此处设定，在 list focus 时，不要加背景色。
+	
+	ul .focus-elem {
+		background: none;
+	}
+
+	ul {
+		display: block;
+		list-style-type: disc;
+		margin-left: 10px;
+		padding-left: 20px;
+
+		li {
+			display: list-item;
+		}
+	}
+
+	.previmg-container {
+		max-width: 100%;
+		text-align: left;
+		position: relative;
+
+		.info {
+			position: absolute;
+			width: 100px;
+			text-align: center;
+			top: 20%;
+			left: 50%;
+			margin-left: -50px;
+			color: #f1f1f1;
+			background-color: #333;
+			border-radius: 5px;
+			padding: 5px;
+			opacity: 1;
+		}
+	}
+}

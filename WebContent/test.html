@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" type = "text/css" href = "./wangEditor-2.1.23/dist/css/wangEditor.min.css">
+</head>
+<body>
+	<script type="text/javascript" src="./wangEditor-2.1.23/dist/js/lib/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="./wangEditor-2.1.23/dist/js/wangEditor.min.js"></script>
+<label>editor</label>
+<div id="div1" style="height:240px">
+    <p>请输入内容...</p>
+</div>
+<input type=file value = "F:/picture/1.jpg" id="file1">upload</input>
+<button onclick = "haha()">hahh</button>
+<script>
+function haha()
+{
+	alert("haha");
+	alert(document.getElementById("file1").value);
+	}
+</script>
+
+<script type="text/javascript">
+var editor = new wangEditor('div1');
+
+// 上传图片（举例）
+editor.config.uploadImgUrl = '/my_evolution/uploadImg';
+
+
+// 设置 headers（举例）
+
+
+editor.create();
+ 
+</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+.wangEditor-mobile-menu-container {
+
+	// 引用通用样式
+	@import 'box-flex.less';
+
+	box-sizing: border-box;
+	position: absolute;
+	z-index: 9999;
+	height: 40px;
+	background-color: #111;
+	border: 1px solid #111;
+	border-radius: 8px;
+	box-shadow: 2px 2px 5px #999;
+	transition: opacity .3s;
+	max-width: 95%;
+
+	// margin动画
+	-webkit-transition: margin .15s;;
+	-o-transition: margin .15s;;
+	transition: margin .15s;;
+
+	* {
+		outline: none;
+	}
+	*:focus {
+		outline: none;
+	}
+
+	.tip {
+		position: absolute;
+		width: 0;
+		height: 0;
+		border: 10px solid #111;   //颜色要和container背景色一样
+		border-left-color: transparent;
+		border-right-color: transparent;
+		left: 0;
+		margin-left: 12px;
+		border-bottom-color: transparent;
+		bottom: 0;
+		margin-bottom: -20px;
+	}
+
+	.item-container {
+		.display-box();
+		.box-align(center);
+
+		.item {
+			.box-flex(1);
+
+			label,
+			div {
+				text-decoration: none;
+				color: #f1f1f1;
+				display: block;
+				padding: 5px 15px;
+
+				.display-box();
+				.box-align(center);
+				.box-pack(center);
+
+				i {
+					.box-flex(1);
+					opacity: 1;
+				}
+			}
+
+			.selected {
+				color: #666;
+			}
+		}
+
+		.gap {
+			width: 1px;
+			height: 40px;
+			margin-top: -1px;
+			background-color: #f1f1f1;
+		}
+	}
+}

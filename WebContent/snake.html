@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <style>
+        .easy
+        {
+            text-align: center;
+            display: block;
+            padding-top: 100px;
+        }
+        button{
+           margin-top:30px ;
+            width: 200px;
+            height:50px;
+          
+            border: 2px solid black;
+            border-radius: 1em;
+            background: gray;
+            color: white;
+            
+        }
+        .left{
+            margin-left:700px;
+            display: none;
+        }
+        button:hover
+        {
+            background: white;
+            text-shadow:5px 5px 5px gray ;
+            color:black;
+           
+            
+        }
+        .text
+        {
+            text-shadow: 10px 10px 10px white;
+            font-size: 4em;
+            color: white;
+
+            text-align: center;
+        }
+        </style>
+    </head>
+<body id=snake>
+    <title>贪吃蛇</title>
+    <canvas width="600" height="600" style = "position:absolute;border:2px solid black;display:none" id="snakeback"></canvas>
+       <div class = "easy" ><h1>贪吃蛇！</h1><button onclick="setTime(150)">简 单</button><br><button onclick =setTime(75)>中 等</button><br><button onclick =setTime(15)>困 难</button></div>
+ <div class = 'left' >
+ <h1 id = "score">You Score:0</label><br>
+ <h1 id="char">Selected Char:' '</label><br>
+ <h1 >介绍：<br>①通过方向键控制；<br②>输入字母可以改变下一个字符；<br>③游戏结束可以打印出snake吃出来的字符；<br>④无聊时的自娱自乐；<br>⑤消磨时间精品；<br>⑥空格暂停</h1>
+ <h1 id = "pause"  style="display:none;color:red">PAUSE</h1>
+
+ </div>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+   <div id ="yousay" style="display:none ;color:white ;padding-top:150px"><h1>You Said:</h1><p class = "text" id = "words"></p></div>
+  
+<script>
+var wall ;
+var sbody = [[2,0],[1,0]];//最开始的长度为1，坐标在0，0
+var charBody = '';
+var size = 10;
+var direction = 3;
+var time = 100;
+var pause = 0;
+var over = false;
+var food = Math.floor(Math.random()*3598+2); 
+var char = ' ';
+var score = 0;
+function setTime(t)
+{
+    $('#snakeback').css("display","block");
+     wall = $('#snakeback')[0].getContext("2d");
+wall.fillStyle = "#006699";
+    time = t;
+window.setInterval(smove,time);
+drawBody(0,0);
+
+$('.left')[0].style.display="block";
+$('.easy')[0].style.display="none";
+}
+function drawBody(x,y)//画蛇的身体和食物
+{
+    wall.clearRect(x*size,y*size,size,size);
+    for( var i of sbody)
+     wall.fillRect(i[0]*size,i[1]*size,size,size);   
+    wall.fillRect(food%60*10,Math.floor(food/60)*10,size,size);
+}
+function die()
+{
+    var x = sbody[0][0];
+    var y =sbody[0][1];
+  //  alert(x+","+y)
+    if(x>=60||y>=60||x<0||y<0)
+    return 1;
+    return 0;
+}
+document.onkeydown =function (e)
+{
+    var code = e.keyCode - 36;
+  //  alert(code);
+    if(pause&&code == -4)
+    {
+        pause = !pause;
+    }
+    else{
+    switch(code){
+    case 1:direction = 1;break;
+    case 2:direction = 2;break;
+    case 3:direction = 3;break;
+    case 4:direction = 4;break;
+    case -4:pause = !pause;break;
+    case 75:over = true;break;
+    default:break;
+    }
+    if(e.keyCode>=65&&e.keyCode<=90)
+    {
+    char = String.fromCharCode(e.keyCode);
+    $('#char').text("Selected Char:'"+char+"'");
+    }
+    }
+}
+function smove()
+{
+    if(over)
+    return;
+    if(!pause)
+    {
+        $("#pause").css ("display","none");
+        var x = sbody[0][0]-sbody[1][0],y = sbody[0][1] -sbody[1][1];
+        var olddir = x<0?1:x>0?3:y<0?2:y>0?4:0;
+        x =sbody[sbody.length-1][0];
+        y =sbody[sbody.length-1][1];
+     for(var i = sbody.length-1;i!=0;--i)
+          {
+        sbody[i][0] = sbody[i-1][0];
+          sbody[i][1] =sbody[i-1][1];
+          
+          }
+    if((direction - olddir)%2==0 )
+      direction = olddir;
+    switch(direction)
+    {
+        case 1:sbody[0][0]-=1;break;
+        case 2:sbody[0][1]-=1;break;
+        case 3:sbody[0][0]+=1;break;
+        case 4:sbody[0][1]+=1;break;
+    }
+    if(die())
+    {
+    over = 1;
+    if(confirm("GAME OVER!\n你吃出来一句话:"+charBody+"\n再来一局？"))
+    {
+        over = 0;
+        sbody.splice(0,sbody.length,[1,0],[0,0]);
+        charBody="";
+        wall.clearRect(0,0,600,600);  
+        direction=3;
+    }
+    else
+    {
+   
+              $('#yousay').css("display","block");
+               $('#words').text(charBody);
+               $('.left').css("display","none");
+               $('#snake').css("background","black");
+    return;
+    }
+    }
+   // alert(sbody[0][1]*60+sbody[0][0]+","+food);
+    if(sbody[0][1]*60+sbody[0][0] === food)
+      {
+          
+            sbody.push([x,y]);
+         
+          charBody+=char;
+          score+=300/time;
+          $('#score').text("You score:"+score);
+  
+           food = rand_food();
+      }
+    drawBody(x,y);
+    }
+    else
+              $("#pause").css ("display","block");
+}
+
+ function rand_food()
+{
+    var r = Math.floor( Math.random()*3600);
+char = ' ';
+$('#char').text("Selected Char:'"+char+"'");
+    while(true)
+    {
+        var i;
+    for( i = 0;i!=sbody.length;++i)
+     if(sbody[i][1]*60+sbody[i][0] === r)
+     {
+     r = Math.floor( Math.random()*3600);;
+     break;
+     }
+
+     if(i === sbody.length)
+     return r;
+    }
+}
+    </script>
+  
+</body>
+
+</html>

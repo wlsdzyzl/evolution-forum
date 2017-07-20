@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+	<title>wangEditor mobile test</title>
+
+	<!--
+		<script src="http://192.168.1.100:8881/target/target-script-min.js#anonymous"></script>
+	-->
+
+	<!--引用css-->
+	<link rel="stylesheet" type="text/css" href="../dist/css/wangEditor-mobile.css">
+	
+	<style type="text/css">
+
+		.container {
+			width:100%; 
+			height:300px; 
+			border:1px solid #ccc;
+		}
+
+	</style>
+</head>
+<body>
+	<p>
+		<b>wangEditor-mobile</b> 
+		适合手指操作的编辑器
+	</p>
+
+	<div class="container">
+		<textarea id="textarea1" style="width:100%;height:100%;">
+			<p>请输入内容……</p>
+			<h3>滕王阁序</h3>
+			<p>豫章故郡，洪都新府。星分翼轸，地接衡庐。襟三江而带五湖，控蛮荆而引瓯越。物华天宝，龙光射牛斗之墟；人杰地灵，徐孺下陈蕃之榻。雄州雾列，俊采星驰。台隍枕夷夏之交，宾主尽东南之美。</p>
+		</textarea>
+	</div>
+
+	<p>
+		by 
+		<a href="http://wangeditor.github.io/m/index.html" target="_blank">
+			wangEditor.github.io/m
+		</a>
+	</p>
+
+	<script type="text/javascript" src="../dist/js/lib/zepto.js"></script>
+	<script type="text/javascript" src="../dist/js/lib/zepto.touch.js"></script>
+	<script type="text/javascript" src="../dist/js/wangEditor-mobile.js"></script>
+	<script type="text/javascript">
+	$(function () {
+
+		// 全局配置
+		// ___E.config.menus = ['bold', 'color', 'quote'];
+
+		// 生成编辑器
+		var editor = new ___E('textarea1');
+
+		// 自定义配置
+		editor.config.uploadImgUrl = '/upload';
+
+		// 初始化
+		editor.init();
+
+		console.log(editor.$txt);
+		
+	});
+	</script>
+</body>
+</html>

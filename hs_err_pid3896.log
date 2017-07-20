@@ -1,0 +1,130 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 480104 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=3896, tid=0x0000000000000cac
+#
+# JRE version:  (8.0_131-b11) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.131-b11 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Call to MiniDumpWriteDump() failed (Error 0x8007000e: 存储空间不足，无法完成此操作。
+)
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000000271d800):  JavaThread "Unknown thread" [_thread_in_vm, id=3244, stack(0x0000000002720000,0x0000000002820000)]
+
+Stack: [0x0000000002720000,0x0000000002820000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x000000000271d800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=3244, stack(0x0000000002720000,0x0000000002820000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff75b9f0000 - 0x00007ff75ba27000 	C:\java\bin\javaw.exe
+0x00007ffeab0b0000 - 0x00007ffeab25d000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffea8890000 - 0x00007ffea89ce000 	C:\Windows\system32\KERNEL32.DLL
+0x00007ffea82d0000 - 0x00007ffea83e5000 	C:\Windows\system32\KERNELBASE.dll
+0x00007ffea6e00000 - 0x00007ffea6e8e000 	C:\Windows\system32\apphelp.dll
+0x00007ffea2f50000 - 0x00007ffea2fa3000 	C:\Windows\AppPatch\AppPatch64\AcGenral.DLL
+0x00007ffea9040000 - 0x00007ffea90ea000 	C:\Windows\system32\msvcrt.dll
+0x00007ffea7fd0000 - 0x00007ffea7ffe000 	C:\Windows\SYSTEM32\SspiCli.dll
+0x00007ffea9570000 - 0x00007ffea95c4000 	C:\Windows\system32\SHLWAPI.dll
+0x00007ffea8de0000 - 0x00007ffea8f57000 	C:\Windows\system32\USER32.dll
+0x00007ffea89d0000 - 0x00007ffea8b64000 	C:\Windows\system32\ole32.dll
+0x00007ffea9a10000 - 0x00007ffeaaf3a000 	C:\Windows\system32\SHELL32.dll
+0x00007ffea77a0000 - 0x00007ffea77c1000 	C:\Windows\SYSTEM32\USERENV.dll
+0x00007ffea94c0000 - 0x00007ffea956a000 	C:\Windows\system32\ADVAPI32.dll
+0x00007ffea6de0000 - 0x00007ffea6dfe000 	C:\Windows\SYSTEM32\MPR.dll
+0x00007ffea95d0000 - 0x00007ffea9711000 	C:\Windows\system32\RPCRT4.dll
+0x00007ffea99b0000 - 0x00007ffea9a09000 	C:\Windows\SYSTEM32\sechost.dll
+0x00007ffea9780000 - 0x00007ffea9991000 	C:\Windows\SYSTEM32\combase.dll
+0x00007ffea8740000 - 0x00007ffea8890000 	C:\Windows\system32\GDI32.dll
+0x00007ffea8200000 - 0x00007ffea8215000 	C:\Windows\SYSTEM32\profapi.dll
+0x00007ffea6a60000 - 0x00007ffea6b12000 	C:\Windows\SYSTEM32\SHCORE.dll
+0x00007ffea90f0000 - 0x00007ffea9126000 	C:\Windows\system32\IMM32.DLL
+0x00007ffeaaf50000 - 0x00007ffeab0a1000 	C:\Windows\system32\MSCTF.dll
+0x00007ffe9f8c0000 - 0x00007ffe9fb3a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.17810_none_6240b9c7ecbd0bda\COMCTL32.dll
+0x000000005b490000 - 0x000000005b562000 	C:\java\jre\bin\msvcr100.dll
+0x000000005b570000 - 0x000000005be0c000 	C:\java\jre\bin\server\jvm.dll
+0x00007ffea4b70000 - 0x00007ffea4b79000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffea6d10000 - 0x00007ffea6d32000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffea1850000 - 0x00007ffea185a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffea9130000 - 0x00007ffea9137000 	C:\Windows\system32\PSAPI.DLL
+0x00007ffea9720000 - 0x00007ffea977a000 	C:\Windows\system32\WS2_32.dll
+0x00007ffea6cd0000 - 0x00007ffea6cfa000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ffea99a0000 - 0x00007ffea99a9000 	C:\Windows\system32\NSI.dll
+0x00007ffea8450000 - 0x00007ffea849f000 	C:\Windows\SYSTEM32\cfgmgr32.dll
+0x00007ffea7080000 - 0x00007ffea70a8000 	C:\Windows\SYSTEM32\DEVOBJ.dll
+0x000000005b480000 - 0x000000005b48f000 	C:\java\jre\bin\verify.dll
+0x000000005b450000 - 0x000000005b479000 	C:\java\jre\bin\java.dll
+0x000000005b430000 - 0x000000005b446000 	C:\java\jre\bin\zip.dll
+0x00007ffea2bf0000 - 0x00007ffea2d7a000 	C:\Windows\system32\DBGHELP.DLL
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: register.user_add
+java_class_path (initial): C:\workspace\my_evolution\build\classes;C:\apache-tomcat-7.0.78\lib\annotations-api.jar;C:\apache-tomcat-7.0.78\lib\catalina-ant.jar;C:\apache-tomcat-7.0.78\lib\catalina-ha.jar;C:\apache-tomcat-7.0.78\lib\catalina-tribes.jar;C:\apache-tomcat-7.0.78\lib\catalina.jar;C:\apache-tomcat-7.0.78\lib\ecj-4.4.2.jar;C:\apache-tomcat-7.0.78\lib\el-api.jar;C:\apache-tomcat-7.0.78\lib\jasper-el.jar;C:\apache-tomcat-7.0.78\lib\jasper.jar;C:\apache-tomcat-7.0.78\lib\jsp-api.jar;C:\apache-tomcat-7.0.78\lib\jspsmartupload.jar;C:\apache-tomcat-7.0.78\lib\jstl.jar;C:\apache-tomcat-7.0.78\lib\mysql-connector-java-5.1.42-bin.jar;C:\apache-tomcat-7.0.78\lib\servlet-api.jar;C:\apache-tomcat-7.0.78\lib\standard.jar;C:\apache-tomcat-7.0.78\lib\tomcat-api.jar;C:\apache-tomcat-7.0.78\lib\tomcat-coyote.jar;C:\apache-tomcat-7.0.78\lib\tomcat-dbcp.jar;C:\apache-tomcat-7.0.78\lib\tomcat-i18n-es.jar;C:\apache-tomcat-7.0.78\lib\tomcat-i18n-fr.jar;C:\apache-tomcat-7.0.78\lib\tomcat-i18n-ja.jar;C:\apache-tomcat-7.0.78\lib\tomcat-jdbc.jar;C:\apache-tomcat-7.0.78\lib\tomcat-util.jar;C:\apache-tomcat-7.0.78\lib\tomcat7-websocket.jar;C:\apache-tomcat-7.0.78\lib\websocket-api.jar;C:\code\jspsmartupload.jar;C:\code\jstl.jar;C:\code\mysql-connector-java-5.1.42-bin.jar;C:\code\standard.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\java
+CLASSPATH=.;C:\java\lib\dt.jar;C:\java\lib\tools.jar
+PATH=C:/java/bin/../jre/bin/server;C:/java/bin/../jre/bin;C:/java/bin/../jre/lib/amd64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Python27;C:\Python27\Scripts;C:\Users\Administrator\Documents\sqlite3;C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python36\;C:\Program Files\MySQL\MySQL Server 5.6\bin\;C:\java\bin;C:\java\bin\jre\bin;C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python36\;C:\Program Files\MySQL\MySQL Server 5.6\bin;C:\java\bin;C:\java\bin\jre\bin;C:\apache-tomcat-7.0.78\bin;C:\eclipse;
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 62 Stepping 4, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows Server 2012 R2 , 64 bit Build 9600 (6.3.9600.17415)
+
+CPU:total 1 (initial active 1) (32 cores per cpu, 2 threads per core) family 6 model 62 stepping 4, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, aes, ht, tsc
+
+Memory: 4k page, physical 2096756k(500380k free), swap 2096756k(5152k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.131-b11) for windows-amd64 JRE (1.8.0_131-b11), built on Mar 15 2017 01:23:53 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Sun Jun 04 02:41:13 2017
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
