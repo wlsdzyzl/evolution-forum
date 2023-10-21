@@ -1,3 +1,7 @@
-# wlsdzyzl-s-Blogs
-这个系统为用servlet+jsp编写的系统，功能齐全，并且不限于我自己的博客，而是一个博客平台，多人可以注册申请自己的博客，其中博主有发文权限，有自己的留言板文章列表图片等，而所有博主（VIP）共享DAP模块（关于DAP的介绍在博文里有介绍）以及普通用户群，VIP可以自定义一些个性化设置，如标签，背景图等，普通用户权限有留言，评论，使用DAP等，游客只能查看而不能发表留言或者评论。
-最新更新：支持头像
+# Evolution Forum
+
+An old project which can build a forum & blog system. 
+
+The implementation of evolution forum involved servlet, jsp, css, html and javascript. Database is built through MySQL. Server is construncted using tomcat.
+
+People need to register for an account to post and write articles. Many interesting functions were implemented, however, the code is not maintained anymore. For more information, refer to [纪念亲儿子——EVOLUTION]() 
